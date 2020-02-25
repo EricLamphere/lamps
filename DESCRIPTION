@@ -1,0 +1,13 @@
+Package: lamps
+Title: Shed Light on Your Data
+Version: 0.0.1
+Authors@R: 
+    person(given = "Eric",
+           family = "Lamphere",
+           role = c("aut", "cre"),
+           email = "ericjlamphere@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Having trouble shedding light on your data? Want your data to shine with cool visualizations? If yes, then lamps is the package for you
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
