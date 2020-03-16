@@ -27,4 +27,46 @@ pacman::p_load(tidyverse, reshape2, gmailr, purrr, rlang)
 # > Gmail functions ----
 
 
-# > Utils ----
+# > Mutate functions ----
+nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE){
+  nuked <- mutate_all(data, function(x){
+    if(is.na(nuke_value)){
+      replace_na(x, ash)
+    } else if(exact){
+      replace(x, x == nuke_value, ash)
+    } else {
+      replace(x, x %~% nuke_value, ash)
+    }
+  })
+}
+
+
+
+
+
+# Utility Functions ----
+# x contains regex string
+`%~%` <- function(x, reg){
+  grepl(reg, x, ignore.case = TRUE, perl = TRUE)
+}
+
+# x does not contain regex string
+`%!~%` <- function(x, reg){
+  !grepl(reg, x, ignore.case = TRUE, perl = TRUE)
+}
+
+# concatenation of two strings
+`%%` <- function(x, y){
+  paste0(
+    ifelse(is.na(x),"",x),
+    ifelse(is.na(y),"",y)
+  )
+}
+
+# x is not a value of y (list or vector)
+`!in` <- function(x, y){
+  !(x %in% y)
+}
+
+
+
