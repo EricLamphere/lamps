@@ -17,6 +17,7 @@ nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE){
       replace(x, x %~% nuke_value, ash)
     }
   })
+  return(nuked)
 }
 
 # calculate new columns based on a vector of labels and formulas
