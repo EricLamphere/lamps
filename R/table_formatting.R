@@ -39,14 +39,14 @@ color_tile2 <- function(format.fun = "percent", digits = 2, font.family = "Audi 
 }
 
 # > cell_edit ----
-cell_edit <- function(font.family = "", font.weight = "normal", format.fun = "comma",
-                      ...){ # ... = inputs to format function
+cell_edit <- function(font.family = "", font.weight = "normal", format.fun = "comma", digits = 2,
+                      ...){ # ... = style inputs
   format.fun <- match.fun(format.fun)
   formatter(
     "span",
-    x ~ format.fun(x, ...),
+    x ~ format.fun(x, digits = digits),
     style = function(x){
-      style(`font-family` = font.family, font.weight = font.weight)
+      style(`font-family` = font.family, font.weight = font.weight, ...)
     }
   )
 }
