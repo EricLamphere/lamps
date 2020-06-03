@@ -5,7 +5,7 @@
 ##########################################################-
 # FUNCTIONS ####
 ##########################################################-
-# > Mutate functions ----
+# nuke ----
 # replace all occurrences of a value in a data frame
 nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE){
   nuked <- mutate_all(data, function(x){
@@ -20,6 +20,7 @@ nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE){
   return(nuked)
 }
 
+# calc ----
 # calculate new columns based on a vector of labels and formulas
 calc <- function(df, labels, formulas, prefix){
   calculated <- df %>%
