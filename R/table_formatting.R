@@ -23,16 +23,16 @@ get_colors <- function(x, pos = "#8af3a3", neg = "#f49c9c", zero = "#ffffff", ze
 }
 
 # > color_tile2 ----
-color_tile2 <- function(format.fun = "percent", digits = 2, font.family = "Audi Type Normal",
+color_tile2 <- function(format.fun = "percent", format.digits = 2,
+                        font.family = "Arial", font.weight = "normal", border.radius = NULL, color = NULL,
                         ...){ # ... = inputs to get_colors function
   format <- match.fun(format.fun)
   formatter("span",
-            x ~ format(x, digits = digits),
+            x ~ format(x, digits = format.digits),
             style = function(x){
               style(
-                display = "block", padding = "4px", #`border-radius` = "4px",
-                #color = "black",
-                `font-family` = font.family,
+                display = "block", padding = "4px", `border-radius` = border.radius,
+                color = color, `font-family` = font.family, `font-weight` = font.weight,
                 `background-color` = get_colors(as.numeric(x), ...)
               )
             })

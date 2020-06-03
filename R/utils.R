@@ -35,7 +35,7 @@ see <- function(x){
 }
 
 # save environment
-saveEnv <- function(environment = .GlobalEnv){
+save_env <- function(environment = .GlobalEnv){
   .GlobalCopy <<- as.environment(as.list(environment, all.names = TRUE))
 }
 
