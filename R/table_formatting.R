@@ -7,13 +7,13 @@
 ##########################################################-
 
 # > get_colors ----
-get_colors <- function(x, pos = RELDIFF_GREEN_DARK, neg = RELDIFF_RED_DARK, zero = WHITE){
+get_colors <- function(x, pos = "#8af3a3", neg = "#f49c9c", zero = "#ffffff", zero_val = 0){
   xsort <- sort(as.numeric(x))
-  xpos <- x[x>0] %>% sort()
-  xneg <- x[x<0] %>% sort()
-  x0 <- x[x==0]
-  colors_pos <- csscolor(gradient(c(0, xpos), zero, pos)) %>% tail(-1)
-  colors_neg <- csscolor(gradient(c(xneg, 0), neg, zero)) %>% head(-1)
+  xpos <- x[x>zero_val] %>% sort()
+  xneg <- x[x<zero_val] %>% sort()
+  x0 <- x[x==zero_val]
+  colors_pos <- csscolor(gradient(c(zero_val, xpos), zero, pos)) %>% tail(-1)
+  colors_neg <- csscolor(gradient(c(xneg, zero_val), neg, zero)) %>% head(-1)
   x0 <- rep(zero, length(x0))
   colors <- tibble(vals = xsort,
                    colors = c(colors_neg, x0, colors_pos)) %>%
