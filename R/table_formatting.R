@@ -22,13 +22,13 @@ get_colors <- function(x, pos = "#8af3a3", neg = "#f49c9c", zero = "#ffffff", ze
   return(colors)
 }
 
-# > color_tile2 ----
-color_tile2 <- function(format.fun = "percent", format.digits = 2,
+# > gradient_tile ----
+gradient_tile <- function(format.fun = "percent", format.digits = 2,
                         font.family = "Arial", font.weight = "normal", border.radius = NULL, color = NULL,
                         ...){ # ... = inputs to get_colors function
-  format <- match.fun(format.fun)
+  format.fun <- match.fun(format.fun)
   formatter("span",
-            x ~ format(x, digits = format.digits),
+            x ~ format.fun(x, digits = format.digits),
             style = function(x){
               style(
                 display = "block", padding = "4px", `border-radius` = border.radius,
