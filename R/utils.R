@@ -40,6 +40,11 @@ save_env <- function(environment = .GlobalEnv){
 }
 
 
+# remove pattern from strings
+`%remove%` <- function(x, pattern){
+  gsub(pattern, "", x, ignore.case = TRUE, perl = TRUE, fixed = FALSE)
+}
+
 # restore saved environment
 # restoreEnv <- function(){
 #   # Remove difference between the saved copy and the current .GlobalEnv

@@ -5,7 +5,7 @@
 ##########################################################-
 # FUNCTIONS ####
 ##########################################################-
-# > Gmail functions ----
+
 # replace all occurrences of a value in a data frame
 getGmailAttachments <- function(search = NULL, output_dir = getwd(), user_id = "me", # REQUIRED
                                 #TODO: file_types = c(".csv", ".xlsx"),

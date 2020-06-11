@@ -6,7 +6,7 @@
 # FUNCTIONS ####
 ##########################################################-
 
-# get_colors ----
+
 get_colors <- function(x, pos = "#8af3a3", neg = "#f49c9c", zero = "#ffffff", zero_val = 0){
   xsort <- sort(as.numeric(x))
   xpos <- x[x>zero_val] %>% sort()
@@ -22,7 +22,7 @@ get_colors <- function(x, pos = "#8af3a3", neg = "#f49c9c", zero = "#ffffff", ze
   return(colors)
 }
 
-# gradient_tile ----
+
 gradient_tile <- function(format.fun = "percent", format.digits = 2,
                         font.family = "Arial", font.weight = "normal", border.radius = NULL, color = NULL,
                         ...){ # ... = inputs to get_colors function
@@ -38,7 +38,7 @@ gradient_tile <- function(format.fun = "percent", format.digits = 2,
             })
 }
 
-# cell_edit ----
+
 cell_edit <- function(font.family = "", font.weight = "normal", format.fun = "comma", digits = 2,
                       ...){ # ... = style inputs
   format.fun <- match.fun(format.fun)

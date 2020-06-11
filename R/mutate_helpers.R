@@ -5,7 +5,6 @@
 ##########################################################-
 # FUNCTIONS ####
 ##########################################################-
-# nuke ----
 #' Replace all occurrences of a value in a data frame.
 #' @param df The data frame to which you're replacing values.
 #' @param nuke_value The value you want to replace with \code{ash}.
@@ -29,6 +28,7 @@ nuke <- function(df, nuke_value = NA, ash = 0, regex = FALSE){
   return(nuked)
 }
 
+
 #' Calculate new columns with lists of labels and formulas
 #' @description Create new columns using a list of column names (labels) and formulas. \code{labels} and \code{formulas} should both be character vectors of the same length
 #' @param df The data frame you're manipulating. The \code{formulas} should be based off of the column names of df.
@@ -38,8 +38,6 @@ nuke <- function(df, nuke_value = NA, ash = 0, regex = FALSE){
 #' @return A data frame with the newly calculated columns.
 #' @example
 #' calc(mpg, "average mpg", "mean(c(cty, hwy), na.rm = TRUE)")
-# calc ----
-# calculate new columns based on a vector of labels and formulas
 calc <- function(df, labels, formulas, prefix = ""){
   calculated <- df %>%
     mutate_(.dots = setNames(
