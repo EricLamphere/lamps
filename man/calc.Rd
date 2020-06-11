@@ -21,3 +21,6 @@ A data frame with the newly calculated columns.
 \description{
 Create new columns using a list of column names (labels) and formulas. \code{labels} and \code{formulas} should both be character vectors of the same length
 }
+\examples{
+calc(mpg, "average mpg", "mean(c(cty, hwy), na.rm = TRUE)")
+}

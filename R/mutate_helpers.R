@@ -15,6 +15,9 @@
 #' nuke(band_members, "Mick", "IT WORKED")
 #' nuke(mtcars, 6, "IT WORKED AGAIN")
 #' nuke(mtcars, 6)
+#' @importFrom tidyr replace_na
+#' @importFrom dplyr mutate_all
+#' @export
 nuke <- function(df, nuke_value = NA, ash = 0, regex = FALSE){
   nuked <- mutate_all(data, function(x){
     if(is.na(nuke_value)){
@@ -36,8 +39,10 @@ nuke <- function(df, nuke_value = NA, ash = 0, regex = FALSE){
 #' @param formulas A character vector of formulas (e.g. \code{col1 / col2}) used to generate the new columns.
 #' @param prefix A prefix to append to the beginning of all of the column names in \code{labels}.
 #' @return A data frame with the newly calculated columns.
-#' @example
+#' @examples
 #' calc(mpg, "average mpg", "mean(c(cty, hwy), na.rm = TRUE)")
+#' @importFrom dplyr "%>%" mutate_
+#' @export
 calc <- function(df, labels, formulas, prefix = ""){
   calculated <- df %>%
     mutate_(.dots = setNames(
