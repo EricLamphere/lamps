@@ -4,3 +4,5 @@
 *.rds
 *.tsv
 *.DS_Store
+.gitignore
+.Rhistory
