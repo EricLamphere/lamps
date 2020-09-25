@@ -18,7 +18,7 @@
 #' nuke(mtcars, 6, "IT WORKED AGAIN", where = "mpg == 21.0")
 #' nuke(mtcars, 6)
 #' @importFrom tidyr replace_na
-#' @importFrom dplyr mutate_all
+#' @import dplyr
 #' @export
 nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE, where = NULL, which_cols = colnames(data)){
 
