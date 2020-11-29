@@ -6,12 +6,24 @@
 # FUNCTIONS ####
 ##########################################################-
 # Utility Functions ----
+
+#' Wrapper for \code{View} - Invoke Data Viewer
+#' @description see(x) = View(x). See \code{View} documentation with \code{?View} for more information.
+#' @param x an R object which can be coerced to a data frame with non-zero numbers of rows and columns.
+#' @return Invisible NULL. The functions puts up a window and returns immediately: the window can be closed via its controls or menus.
+#' @export
 see <- function(x){
   View(x, title = deparse(substitute(x)))
 }
 
 # Pipe operators ----
-# x contains regex string
+
+#' Pattern Matching
+#' @description Search for matches to an argument pattern within each element of a character vector. Uses perl style regex and ignores case. See \code{grepl} documentation for more information.
+#' @param x Character vector
+#' @param reg Character string containing a regular expression to be matched in the given character vector.
+#' @return See \code{grepl} documentation for more information
+#' @export
 `%~%` <- function(x, reg){
   grepl(reg, x, ignore.case = TRUE, perl = TRUE)
 }
