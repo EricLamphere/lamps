@@ -6,13 +6,13 @@
 # FUNCTIONS ####
 ##########################################################-
 
-# replace all occurrences of a value in a data frame
+# TODO: finish this function
 getGmailAttachments <- function(search = NULL, output_dir = getwd(), user_id = "me", # REQUIRED
                                 #TODO: file_types = c(".csv", ".xlsx"),
                                 num_results = NULL, label_ids = NULL, include_spam_trash = FALSE, page_token = NULL # NOT REQUIRED
 ){
   # Prepare authentication with gmail api
-  # gmailr::use_secret_file() # CHANGE THIS PART
+  # TODO: gmailr::use_secret_file() # CHANGE THIS PART
 
   # check: gmail_ids is specified
   if(is.null(search)) stop("please specify the gmail search term used in the query. Same format as gmail search box: https://support.google.com/mail/answer/7190?hl=en")

@@ -14,8 +14,3 @@
 #  - maybe add a few takeaways similar to the causal impact package
 
 
-##########################################################-
-# LIBRARIES ####
-##########################################################-
-if(!("pacman" %in% installed.packages())) install.packages("pacman")
-pacman::p_load(tidyverse, reshape2, gmailr, purrr, rlang, formattable, kableExtra)
