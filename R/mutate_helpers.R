@@ -96,7 +96,7 @@ calc <- function(df, labels, formulas, prefix = ""){
   calculated <- df %>%
     mutate_(.dots = setNames(
       formulas,
-      prefix %% labels
+      prefix %&% labels
     ))
   return(calculated)
 }

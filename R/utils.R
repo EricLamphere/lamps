@@ -44,7 +44,7 @@ see <- function(x){
 #' @param y Second R object to be converted to a character vector and concatenated to the right of \code{x}.
 #' @return See \code{paste} documentation for more information.
 #' @export
-`%%` <- function(x, y){
+`%&%` <- function(x, y){
   paste0(
     ifelse(is.na(x),"",x),
     ifelse(is.na(y),"",y)

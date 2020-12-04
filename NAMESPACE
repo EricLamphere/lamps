@@ -2,7 +2,7 @@
 
 export("%!in%")
 export("%!~%")
-export("%%")
+export("%&%")
 export("%remove%")
 export("%~%")
 export(calc)

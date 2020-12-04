@@ -17,7 +17,7 @@ getGmailAttachments <- function(search = NULL, output_dir = getwd(), user_id = "
   # check: gmail_ids is specified
   if(is.null(search)) stop("please specify the gmail search term used in the query. Same format as gmail search box: https://support.google.com/mail/answer/7190?hl=en")
   # check: output_dir exists
-  if(!dir.exists(output_dir)) stop("File path '" %% output_dir %% "' does not exists")
+  if(!dir.exists(output_dir)) stop("File path '" %&% output_dir %&% "' does not exists")
   # search for the messages and get the IDs
   base::message("Searching for gmails")
   search <- paste(search, "has:attachment")
