@@ -5,4 +5,4 @@
 *.tsv
 *.DS_Store
 .gitignore
-.Rhistory
+*.Rhistory

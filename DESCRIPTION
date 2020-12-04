@@ -6,7 +6,7 @@ Authors@R:
            family = "Lamphere",
            role = c("aut", "cre"),
            email = "ericjlamphere@gmail.com")
-Description: Having trouble shedding light on your data? Want your data to shine with cool visualizations? If yes, then lamps is the package for you
+Description: Having trouble shedding light on your data? Want your data to shine with cool visualizations? If yes, then lamps is the package for you.
 Imports: dplyr, tidyr
 License: NONE
 Encoding: UTF-8
