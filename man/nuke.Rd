@@ -2,27 +2,38 @@
 % Please edit documentation in R/mutate_helpers.R
 \name{nuke}
 \alias{nuke}
-\title{Replace all occurrences of a value in a data frame.}
+\title{Replace All Values in Data Frame}
 \usage{
-nuke(df, nuke_value = NA, ash = 0, regex = FALSE)
+nuke(
+  data,
+  nuke_value = NA,
+  ash = 0,
+  exact = TRUE,
+  where = NULL,
+  which_cols = colnames(data)
+)
 }
 \arguments{
-\item{df}{The data frame to which you're replacing values.}
-
 \item{nuke_value}{The value you want to replace with \code{ash}.}
 
 \item{ash}{The value you want to replace \code{nuke_value} with.}
 
-\item{regex}{Logical indicating whether or not you want to use \code{grepl(ignore.case = TRUE, perl = TRUE)} style regex.}
+\item{exact}{Logical indicating whether or not you want to use \code{grepl(ignore.case = TRUE, perl = TRUE)} style regex.}
+
+\item{where}{Filter applied to the data indicating the conditions required for the values to be replaced. Requires a string input, but functions the same way \code{dplyr::filter} does.}
+
+\item{which_cols}{The columns across which the replacements will be applied. Use this if some columns that don't contain \code{nuke_value} are returning as a different class than they were in the original \code{data} input}
+
+\item{df}{The data frame to which you're replacing values.}
 }
 \value{
 A data frame with the all occurrences of \code{nuke_value} replaced with \code{ash}.
 }
 \description{
-Replace all occurrences of a value in a data frame.
+Replace All Values in Data Frame
 }
 \examples{
 nuke(band_members, "Mick", "IT WORKED")
-nuke(mtcars, 6, "IT WORKED AGAIN")
+nuke(mtcars, 6, "IT WORKED AGAIN", where = "mpg == 21.0")
 nuke(mtcars, 6)
 }

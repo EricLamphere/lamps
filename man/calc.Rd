@@ -2,7 +2,7 @@
 % Please edit documentation in R/mutate_helpers.R
 \name{calc}
 \alias{calc}
-\title{Calculate new columns with lists of labels and formulas}
+\title{Programmatically Calculate New Columns}
 \usage{
 calc(df, labels, formulas, prefix = "")
 }
