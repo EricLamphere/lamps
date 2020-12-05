@@ -34,7 +34,7 @@ see <- function(x){
 #' @param reg Character string containing a regular expression to be anti-matched in the given character vector.
 #' @return See \code{grepl} documentation for more information.
 #' @export
-`%!~%` <- function(x, reg){
+`%^~%` <- function(x, reg){
   !grepl(reg, x, ignore.case = TRUE, perl = TRUE)
 }
 
@@ -57,7 +57,7 @@ see <- function(x){
 #' @param y Vector or NULL: the values to be matched against. Long vectors are not supported.
 #' @return See \code{%in%} documentation for more information.
 #' @export
-`%!in%` <- function(x, y){
+`%notin%` <- function(x, y){
   !(x %in% y)
 }
 
