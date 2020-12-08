@@ -1,10 +1,4 @@
-### Title:    Mutate Helper Functions
-### Author:   Eric Lamphere (ericjlamphere@gmail.com)
-### Time:     2020-02-24 20:13:33
 
-##########################################################-
-# FUNCTIONS ####
-##########################################################-
 #' Replace All Values in Data Frame
 #' @param df The data frame to which you're replacing values.
 #' @param nuke_value The value you want to replace with \code{ash}.
@@ -22,9 +16,9 @@
 #' @export
 nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE, where = NULL, which_cols = colnames(data)){
 
-  column_classes <- tibble(colName = colnames(data),
-                           class = sapply(data, class)) %>%
-    mutate(convertFun = paste0("as.", class))
+  # column_classes <- tibble(colName = colnames(data),
+  #                          class = sapply(data, class)) %>%
+  #   mutate(convertFun = paste0("as.", class))
 
   data.1 <- data %>%
     mutate(..ID_COL.. = 1:n())
@@ -77,28 +71,3 @@ nuke <- function(data, nuke_value = NA, ash = 0, exact = TRUE, where = NULL, whi
 
   return(aftermath)
 }
-
-
-
-
-#' Programmatically Calculate New Columns
-#' @description Create new columns using a list of column names (labels) and formulas. \code{labels} and \code{formulas} should both be character vectors of the same length
-#' @param df The data frame you're manipulating. The \code{formulas} should be based off of the column names of df.
-#' @param labels A character vector used as the names for the newly created columns.
-#' @param formulas A character vector of formulas (e.g. \code{col1 / col2}) used to generate the new columns.
-#' @param prefix A prefix to append to the beginning of all of the column names in \code{labels}.
-#' @return A data frame with the newly calculated columns.
-#' @examples
-#' calc(mpg, "average mpg", "mean(c(cty, hwy), na.rm = TRUE)")
-#' @importFrom dplyr "%>%" mutate_
-#' @export
-calc <- function(df, labels, formulas, prefix = ""){
-  calculated <- df %>%
-    mutate_(.dots = setNames(
-      formulas,
-      prefix %&% labels
-    ))
-  return(calculated)
-}
-
-
